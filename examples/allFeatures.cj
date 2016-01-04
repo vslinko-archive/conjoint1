@@ -8,4 +8,4 @@ let c:String = "1"; # String variable
 let d:String? = null; # Strint variable
 let e:Boolean = true; # Boolean variable
 
-printLine(d); # Write line to output
+#printLine(d); # Write line to output

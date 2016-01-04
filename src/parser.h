@@ -19,27 +19,11 @@
  * THE SOFTWARE.
  */
 
+#ifndef CONJOINT_SRC_PARSER_H_
+#define CONJOINT_SRC_PARSER_H_
+
 #include "source_file.h"
-#include "parser.h"
 
-#include <stdio.h>
+void cj_parse(struct cj_source_file* source_file);
 
-int main(int argc, char* argv[]) {
-	if (argc < 2) {
-		printf("Usage: %s SOURCE_FILE\n", argv[0]);
-		return 1;
-	}
-
-	struct cj_source_file source_file = {
-		.path = argv[1]
-	};
-
-	if (cj_read_source_file(&source_file) < 0) {
-		printf("Unable to read file \"%s\"\n", source_file.path);
-		return 2;
-	}
-
-    cj_parse(&source_file);
-
-	return 0;
-}
+#endif /* CONJOINT_SRC_PARSER_H_ */
